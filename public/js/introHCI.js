@@ -34,12 +34,14 @@ function addProjectDetails(e) {
 
 function addProject(proj) { 
 	console.log(proj); 
+	var projID = proj['id'];
+	console.log(projID);
 	var projLink = '<a href="#" class="thumbnail">' +
 			'<img src="' + proj['image'] + '" class="detailsImage">' +
 			'<p><small>' + proj['title'] + '</small></p>' +
 			'<p><small>' + proj['date'] + '</small></p></a>';
-	//$('proj .details').html('foo'); //keeps adding to all projects??
-	$('#project' + proj['id'] + '.details').html(projLink + proj['summary']);
+	//$('#project' + projID + ' .details').html('foo'); 
+		$('#project' + proj['id'] + ' .details').html(projLink + proj['summary']);
 	}
 /*
  * Make an AJAX call to retrieve a color palette for the site
